@@ -1,0 +1,220 @@
+{
+  "id": "/subscriptions/85ae70d9-ad27-46b9-ba7e-7582167f3057/resourceGroups/VM1_group/providers/Microsoft.Resources/deployments/CreateVm-MicrosoftWindowsServer.WindowsServer-202-20241214031535",
+  "name": "CreateVm-MicrosoftWindowsServer.WindowsServer-202-20241214031535",
+  "type": "Microsoft.Resources/deployments",
+  "tags": {
+    "primaryResourceId": "/subscriptions/85ae70d9-ad27-46b9-ba7e-7582167f3057/resourcegroups/VM1_group/providers/Microsoft.Compute/virtualMachines/vm1",
+    "marketplaceItemId": "microsoft.freeaccountvirtualmachine-windows",
+    "provisioningHash": "SolutionProvider"
+  },
+  "properties": {
+    "templateHash": "1849447929478362466",
+    "parameters": {
+      "location": {
+        "type": "String",
+        "value": "brazilsouth"
+      },
+      "networkInterfaceName": {
+        "type": "String",
+        "value": "vm1181"
+      },
+      "networkSecurityGroupName": {
+        "type": "String",
+        "value": "vm1-nsg"
+      },
+      "networkSecurityGroupRules": {
+        "type": "Array",
+        "value": [
+          {
+            "name": "RDP",
+            "properties": {
+              "priority": 300,
+              "protocol": "TCP",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "3389"
+            }
+          }
+        ]
+      },
+      "subnetName": {
+        "type": "String",
+        "value": "default"
+      },
+      "virtualNetworkName": {
+        "type": "String",
+        "value": "vm1-vnet"
+      },
+      "addressPrefixes": {
+        "type": "Array",
+        "value": [
+          "10.1.0.0/16"
+        ]
+      },
+      "subnets": {
+        "type": "Array",
+        "value": [
+          {
+            "name": "default",
+            "properties": {
+              "addressPrefix": "10.1.1.0/24"
+            }
+          }
+        ]
+      },
+      "publicIpAddressName": {
+        "type": "String",
+        "value": "vm1-ip"
+      },
+      "publicIpAddressType": {
+        "type": "String",
+        "value": "Dynamic"
+      },
+      "pipDeleteOption": {
+        "type": "String",
+        "value": "Detach"
+      },
+      "virtualMachineName": {
+        "type": "String",
+        "value": "vm1"
+      },
+      "virtualMachineComputerName": {
+        "type": "String",
+        "value": "vm1"
+      },
+      "virtualMachineRG": {
+        "type": "String",
+        "value": "VM1_group"
+      },
+      "osDiskType": {
+        "type": "String",
+        "value": "Premium_LRS"
+      },
+      "osDiskSizeGiB": {
+        "type": "Int",
+        "value": 64
+      },
+      "osDiskDeleteOption": {
+        "type": "String",
+        "value": "Delete"
+      },
+      "virtualMachineSize": {
+        "type": "String",
+        "value": "Standard_B1s"
+      },
+      "nicDeleteOption": {
+        "type": "String",
+        "value": "Detach"
+      },
+      "adminUsername": {
+        "type": "String",
+        "value": "vm1user"
+      },
+      "adminPassword": {
+        "type": "SecureString"
+      },
+      "patchMode": {
+        "type": "String",
+        "value": "AutomaticByPlatform"
+      },
+      "enableHotpatching": {
+        "type": "Bool",
+        "value": false
+      },
+      "rebootSetting": {
+        "type": "String",
+        "value": "IfRequired"
+      }
+    },
+    "mode": "Incremental",
+    "debugSetting": {
+      "detailLevel": "None"
+    },
+    "provisioningState": "Running",
+    "timestamp": "2024-12-14T06:17:35.7034124Z",
+    "duration": "PT10.248351S",
+    "correlationId": "920508b1-6a06-4741-93cc-a7e7fdfc2486",
+    "providers": [
+      {
+        "namespace": "Microsoft.Network",
+        "resourceTypes": [
+          {
+            "resourceType": "networkInterfaces",
+            "locations": [
+              "brazilsouth"
+            ]
+          },
+          {
+            "resourceType": "networkSecurityGroups",
+            "locations": [
+              "brazilsouth"
+            ]
+          },
+          {
+            "resourceType": "virtualNetworks",
+            "locations": [
+              "brazilsouth"
+            ]
+          },
+          {
+            "resourceType": "publicIpAddresses",
+            "locations": [
+              "brazilsouth"
+            ]
+          }
+        ]
+      },
+      {
+        "namespace": "Microsoft.Compute",
+        "resourceTypes": [
+          {
+            "resourceType": "virtualMachines",
+            "locations": [
+              "brazilsouth"
+            ]
+          }
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/85ae70d9-ad27-46b9-ba7e-7582167f3057/resourceGroups/VM1_group/providers/Microsoft.Network/networkSecurityGroups/vm1-nsg",
+            "resourceType": "Microsoft.Network/networkSecurityGroups",
+            "resourceName": "vm1-nsg"
+          },
+          {
+            "id": "/subscriptions/85ae70d9-ad27-46b9-ba7e-7582167f3057/resourceGroups/VM1_group/providers/Microsoft.Network/virtualNetworks/vm1-vnet",
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "resourceName": "vm1-vnet"
+          },
+          {
+            "id": "/subscriptions/85ae70d9-ad27-46b9-ba7e-7582167f3057/resourceGroups/VM1_group/providers/Microsoft.Network/publicIpAddresses/vm1-ip",
+            "resourceType": "Microsoft.Network/publicIpAddresses",
+            "resourceName": "vm1-ip"
+          }
+        ],
+        "id": "/subscriptions/85ae70d9-ad27-46b9-ba7e-7582167f3057/resourceGroups/VM1_group/providers/Microsoft.Network/networkInterfaces/vm1181",
+        "resourceType": "Microsoft.Network/networkInterfaces",
+        "resourceName": "vm1181"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/85ae70d9-ad27-46b9-ba7e-7582167f3057/resourceGroups/VM1_group/providers/Microsoft.Network/networkInterfaces/vm1181",
+            "resourceType": "Microsoft.Network/networkInterfaces",
+            "resourceName": "vm1181"
+          }
+        ],
+        "id": "/subscriptions/85ae70d9-ad27-46b9-ba7e-7582167f3057/resourceGroups/VM1_group/providers/Microsoft.Compute/virtualMachines/vm1",
+        "resourceType": "Microsoft.Compute/virtualMachines",
+        "resourceName": "vm1"
+      }
+    ],
+    "validationLevel": "Template"
+  }
+}
